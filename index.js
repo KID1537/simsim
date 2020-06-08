@@ -39,8 +39,8 @@ client.on('message', (message) => {
   }
    
   if (message.content === 'read') {
-    fs.readFileSync('/Data/test', 'utf-8');
-    message.channel.send('읽기 성공!');
+    let l = fs.readFileSync('/Data/test', 'utf-8');
+    message.channel.send(l+'\읽기 성공!');
   }
    
  if(message.content == 's?') {
