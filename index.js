@@ -84,4 +84,4 @@ async function editMsg(message, str1, str2, delay = 2000) {
   }, delay);
 }
 
-client.login('NzEzNzI5Nzk2OTkwODI4NjM1.XtBckQ.ZMQmPlTk584CRgWJ8F6cjbU_efI');
+client.login(token);
