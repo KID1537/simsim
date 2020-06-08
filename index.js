@@ -33,19 +33,14 @@ client.on("guildMemberRemove", (member) => {
 
 client.on('message', (message) => {
     
-  if (message.content === '뉴스') {
-    request('https://simsim.msub.kr/api/news.php', function(error, response, body){
-      let helpImg = 'https://cdn.discordapp.com/attachments/714828023093788752/715066220868534332/KakaoTalk_20200523_212814624.jpg';
-      let embed = new Discord.RichEmbed()
-        .setAuthor('SIMSIM NEWS', helpImg)
-        .setColor('#186de6')
-        .setFooter(`SIMSIM`)
-        .setTimestamp()
-  
-      embed.addField('TOP 10', body);
-  
-      message.channel.send(embed)
-    });
+  if (message.content === 'test') {
+    fs.writeFileSync('/Data/test', 'utf-8', 'test');
+    message.channel.send('테스트 성공!');
+  }
+   
+  if (message.content === 'read') {
+    fs.readFileSync('/Data/test', 'utf-8');
+    message.channel.send('읽기 성공!');
   }
    
  if(message.content == 's?') {
