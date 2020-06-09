@@ -40,7 +40,7 @@ client.on('message', (message) => {
    
   if (message.content === 'read') {
     let l = fs.readFileSync('test/test.js', 'utf-8');
-    message.channel.send(l+'\읽기 성공!');
+    message.channel.send(l+'\n\n읽기 성공!');
   }
    
  if(message.content == 's?') {
