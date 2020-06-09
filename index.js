@@ -34,12 +34,12 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
     
   if (message.content === '파일테스트') {
-    fs.writeFileSync('test/test.txt', 'utf-8', 'test');
+    fs.writeFileSync('test/test.js', 'utf-8', 'test');
     message.channel.send('테스트 성공!');
   }
    
   if (message.content === '파일읽기') {
-    let l = fs.readFileSync('test/test.txt', 'utf-8');
+    let l = fs.readFileSync('test/test.js', 'utf-8');
     message.channel.send(l+'\n\n읽기 성공!');
   }
    
