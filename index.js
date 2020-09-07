@@ -75,7 +75,7 @@ client.on('message', (message) => {
    }
    
    if (message.content === 's한강') {
-   request.get('http://hangang.msub.kr', function (error, response, body) {
+   request.get('https://hangang.msub.kr/', function (error, response, body) {
       message.channel.send();
       let helpImg = 'https://simsim.msub.kr/img/simsim.jpg';
       let embed = new Discord.RichEmbed()
