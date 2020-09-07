@@ -34,7 +34,7 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
     
  if(message.content == 's?') {
-    let helpImg = 'https://cdn.discordapp.com/attachments/714828023093788752/715066220868534332/KakaoTalk_20200523_212814624.jpg';
+    let helpImg = 'https://simsim.msub.kr/img/simsim.jpg';
     let embed = new Discord.RichEmbed()
       .setAuthor('SIMSIM Commands', helpImg)
       .setColor('#186de6')
