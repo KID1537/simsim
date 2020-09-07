@@ -42,7 +42,7 @@ client.on('message', (message) => {
       .setTimestamp()
 
     embed.addField('Command: ', '• `s?`: 도움말이 뜹니다.');
-    embed.addField('General: ', '• `테스트`: 메세지 변경을 테스트 합니다.');
+    embed.addField('General: ', '• `s뉴스`: 실시간 네이버 뉴스 top10을 보냅니다.');
     embed.addField('Game: ', '• `제작중`: 곧 공개됩니다...');
     embed.addField('Bot: ', '• `심심아`: 심심이가 대답합니다.');
 
