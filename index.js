@@ -60,14 +60,17 @@ client.on('message', (message) => {
       				.setColor('#186de6')
       				.setFooter(`SIMSIM`)
       				.setTimestamp()
-				embed.addField('실시간 뉴스 top 10!', '\n'+body);
+                                let discription = "\n";
+                                disciption += body+"\n";
+				embed.setDescription(description);
 			message.channel.send(embed)
    		});
    	}
    
-   	if (message.content === 's한강') {
-   		request.get('https://hangang.msub.kr/', function (error, response, body) {
-     			message.channel.send(body);
+   	if (message.content === 's코로나') {
+   		request.get('https://capi.msub.kr/', function (error, response, body) {
+     	            let obj = JSON.parse(body);
+                    message.channel.send(obj["today"]["confirmation"]);
    		});
    	}
    
