@@ -79,20 +79,36 @@ client.on('message', (message) => {
         var $ = cheerio.load(body);
       $('#temp').each(function(){
     var temp = $(this);
-    var temp_text = temp.text();
+    var temp_text = temp.text(); 
+     message.channel.send(temp);
   })
-      let helpImg = 'https://simsim.msub.kr/img/simsim.jpg';
-      let embed = new Discord.RichEmbed()
-      .setAuthor('SIMSIM Commands', helpImg)
-      .setColor('#186de6')
-      .setFooter(`SIMSIM`)
-      .setTimestamp()
-
-    embed.addField('현재 한강온도', '\n'+temp_text);
-
-    message.channel.send(embed)
+   
    });
    }
+   
+   if (message.content === 's.play') {
+    // Only try to join the sender's voice channel if they are in one themselves
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
+        .then(connection => { // Connection is an instance of VoiceConnection
+          message.reply('playing music!');
+          const dispatcher = connection.playFile('https://www.youtube.com/watch?v=flugA1Kit_g');
+          dispatcher.on("end", end => {});
+        })
+        .catch(console.log);
+    } else {
+      message.reply('먼저 방에 들어가');
+    }
+  }
+  if (message.content === 's.leave') {
+    // Only try to join the sender's voice channel if they are in one themselves
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.leave();
+      message.reply('bye!');
+    } else {
+      message.reply('이미 나왔는데..');
+    }
+  }
    
    });
 
