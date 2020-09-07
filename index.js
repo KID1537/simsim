@@ -74,6 +74,22 @@ client.on('message', (message) => {
    });
    }
    
+   if (message.content === 's한강') {
+   request.get('http://hangang.msub.kr', function (error, response, body) {
+      message.channel.send();
+      let helpImg = 'https://simsim.msub.kr/img/simsim.jpg';
+      let embed = new Discord.RichEmbed()
+      .setAuthor('SIMSIM Commands', helpImg)
+      .setColor('#186de6')
+      .setFooter(`SIMSIM`)
+      .setTimestamp()
+
+    embed.addField('현재 한강온도', '\n'+body);
+
+    message.channel.send(embed)
+   });
+   }
+   
    });
 
 
