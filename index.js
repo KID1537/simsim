@@ -57,8 +57,14 @@ client.on('message', (message) => {
      let reply_1 = ['부르셨어요?','왜요?','혹시 찾으셨나요?'];
      message.reply(reply_1[Math.floor(Math.random()*3)]);
   }
-    
-});
+   
+   if (message.content === '테스트') {
+   request('http://simsim.msub.kr/api/news/', function (error, response, body) {
+      message.channal.send(body);
+   });
+   }
+   
+   });
 
 
 async function editMsg(message, str1, str2, delay) {
