@@ -60,7 +60,17 @@ client.on('message', (message) => {
    
    if (message.content === 's뉴스') {
    request.get('http://simsim.msub.kr/api/news/', function (error, response, body) {
-      message.channal.send(error);
+      message.channel.send();
+      let helpImg = 'https://simsim.msub.kr/img/simsim.jpg';
+      let embed = new Discord.RichEmbed()
+      .setAuthor('SIMSIM Commands', helpImg)
+      .setColor('#186de6')
+      .setFooter(`SIMSIM`)
+      .setTimestamp()
+
+    embed.addField('실시간 뉴스 top 10!', '\n'+body);
+
+    message.channel.send(embed)
    });
    }
    
