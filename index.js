@@ -58,7 +58,7 @@ client.on('message', (message) => {
      message.reply(reply_1[Math.floor(Math.random()*3)]);
   }
    
-   if (message.content === '테스트') {
+   if (message.content === 's뉴스') {
    request('http://simsim.msub.kr/api/news/', function (error, response, body) {
       message.channal.send(body);
    });
