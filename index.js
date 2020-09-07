@@ -76,7 +76,11 @@ client.on('message', (message) => {
    
    if (message.content === 's한강') {
    request.get('https://hangang.msub.kr/', function (error, response, body) {
-      message.channel.send();
+        var $ = cheerio.load(body);
+      $('#temp').each(function(){
+    var temp = $(this);
+    var temp_text = temp.text();
+  })
       let helpImg = 'https://simsim.msub.kr/img/simsim.jpg';
       let embed = new Discord.RichEmbed()
       .setAuthor('SIMSIM Commands', helpImg)
@@ -84,7 +88,7 @@ client.on('message', (message) => {
       .setFooter(`SIMSIM`)
       .setTimestamp()
 
-    embed.addField('현재 한강온도', '\n'+body);
+    embed.addField('현재 한강온도', '\n'+temp_text);
 
     message.channel.send(embed)
    });
