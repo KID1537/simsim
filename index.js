@@ -67,12 +67,7 @@ client.on('message', (message) => {
    
    	if (message.content === 's한강') {
    		request.get('https://hangang.msub.kr/', function (error, response, body) {
-        		var $ = cheerio.load(body);
-      			$('#temp').each(function(){
-    				var temp = $(this);
-    				var temp_text = temp.text(); 
-     				message.channel.send(temp);
-   			});
+     			message.channel.send(body);
    		});
    	}
    
