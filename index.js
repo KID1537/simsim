@@ -59,7 +59,7 @@ client.on('message', (message) => {
   }
    
    if (message.content === 's뉴스') {
-   request('http://simsim.msub.kr/api/news/', function (error, response, body) {
+   request.get('http://simsim.msub.kr/api/news/', function (error, response, body) {
       message.channal.send(body);
    });
    }
